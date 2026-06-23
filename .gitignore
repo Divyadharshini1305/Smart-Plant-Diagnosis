@@ -1,0 +1,16 @@
+# Machine Learning Models
+models/
+
+# Python Cache Files
+__pycache__/
+*.pyc
+
+# Virtual Environment
+venv/
+.env
+
+# VS Code Settings
+.vscode/
+
+# System Files
+Thumbs.db
