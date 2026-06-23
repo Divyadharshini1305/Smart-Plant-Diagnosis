@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Plant Diagnosis</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='sytle.css') }}">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <div class="navbar-logo">
+  <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Smart Plant Diagnosis Logo" class="logo">
+  <span>Smart Plant Diagnosis</span>
+</div>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#features">Features</a>
+      <a href="#knowledge">Knowledge Base</a>
+      <a href="#contact">Contact</a>
+      <a href="{{ url_for('login') }}" class="btn">Login</a>    
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+
+        <h1>Protect Your Crops with AI-Powered Diagnosis</h1>
+
+        <p>
+            Detect plant diseases early, get expert recommendations,
+            and boost your yield.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="{{ url_for('detect') }}" class="primary-btn">Start Free Trial</a>
+            <a href="#" class="secondary-btn">Watch Demo</a>
+        </div>
+
+    </div>
+</section>
+
+  <!-- Features -->
+  <!-- Our Features Section -->
+<section class="features">
+  <h2>✨ Smart Features</h2>
+
+  <div class="card-container">
+
+    <a href="{{ url_for('detect') }}" class="feature-card-link">
+      <div class="card green">
+        <div class="feature-icon">🔍</div>
+        <h3>Predict Disease</h3>
+        <p>Upload a leaf image to instantly detect diseases and Receive tailored organic and chemical treatment plans for your crops.</p>
+      </div>
+    </a>
+
+    <div class="feature-card" onclick="window.location='{{ url_for('rotation') }}'">
+      <div class="feature-icon">🔄</div>
+      <h3>Plan Rotation</h3>
+      <p>Optimize soil health with AI-powered crop rotation strategies.</p>
+    </div>
+
+    <div class="feature-card" onclick="window.location='{{ url_for('agri_shop') }}'">
+      <div class="feature-icon">📍</div>
+      <h3>Find Local Shops</h3>
+      <p>Locate nearby pesticide and fertilizer shops on an interactive map.</p>
+    </div>
+
+  </div>
+</section>
+<!-- Why Choose Section -->
+<section class="features">
+  <h2>✨ Why Choose Smart Plant Diagnosis?</h2>
+  <div class="card-container">
+    <div class="card purple">
+      <div class="icon">📱</div>
+      <h3>Mobile Optimized</h3>
+      <p>Access anytime, anywhere with a fully responsive mobile-first design.</p>
+    </div>
+    <div class="card teal">
+      <div class="icon">🌍</div>
+      <h3>Multi-Language Support</h3>
+      <p>Available in multiple languages to support farmers worldwide.</p>
+    </div>
+    <div class="card orange">
+      <div class="icon">🔒</div>
+      <h3>Secure & Reliable</h3>
+      <p>Your farming data is encrypted and stored with enterprise-grade security.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Call to Action Section -->
+<section class="cta">
+  <h2>Ready to Transform Your Farming?</h2>
+  <a href="{{ url_for('signup') }}" class="btn">Signup</a>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Smart Plant Diagnosis. All rights reserved.</p>
+  </footer>
+</body>
+</html>
