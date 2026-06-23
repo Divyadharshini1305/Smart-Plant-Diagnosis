@@ -1,0 +1,34 @@
+[
+ {
+  "disease_name": "Healthy",
+  "organic_fertilizer": "Maintain organic compost",
+  "bio_pesticide": "Not Required",
+  "dosage": "N/A",
+  "crop_rotation": "Continue seasonal rotation",
+  "prevention": "Regular monitoring"
+ },
+ {
+  "disease_name": "Blight",
+  "organic_fertilizer": "Farmyard Manure",
+  "bio_pesticide": "Trichoderma Harzianum",
+  "dosage": "2kg/acre",
+  "crop_rotation": "Legumes",
+  "prevention": "Avoid overhead irrigation"
+ },
+ {
+  "disease_name": "Common_Rust",
+  "organic_fertilizer": "Vermicompost",
+  "bio_pesticide": "Neem Oil Spray",
+  "dosage": "5ml/litre",
+  "crop_rotation": "Pulses",
+  "prevention": "Use resistant varieties"
+ },
+ {
+  "disease_name": "Gray_Leaf_Spot",
+  "organic_fertilizer": "Green Manure",
+  "bio_pesticide": "Pseudomonas Fluorescens",
+  "dosage": "10ml/litre",
+  "crop_rotation": "Soybean",
+  "prevention": "Ensure proper spacing"
+ }
+]

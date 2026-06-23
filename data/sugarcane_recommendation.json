@@ -1,0 +1,42 @@
+[
+ {
+  "disease_name": "Healthy",
+  "organic_fertilizer": "Maintain balanced organic manure",
+  "bio_pesticide": "Not Required",
+  "dosage": "N/A",
+  "crop_rotation": "Continue seasonal rotation",
+  "prevention": "Regular monitoring"
+ },
+ {
+  "disease_name": "Mosaic",
+  "organic_fertilizer": "Compost",
+  "bio_pesticide": "Neem Oil Spray",
+  "dosage": "5ml/litre",
+  "crop_rotation": "Legumes",
+  "prevention": "Use disease-free seed setts"
+ },
+ {
+  "disease_name": "RedRot",
+  "organic_fertilizer": "Farmyard Manure",
+  "bio_pesticide": "Trichoderma Viride",
+  "dosage": "2kg/acre",
+  "crop_rotation": "Paddy",
+  "prevention": "Avoid water stagnation"
+ },
+ {
+  "disease_name": "Rust",
+  "organic_fertilizer": "Green Manure",
+  "bio_pesticide": "Pseudomonas Fluorescens",
+  "dosage": "10ml/litre",
+  "crop_rotation": "Maize",
+  "prevention": "Ensure proper spacing"
+ },
+ {
+  "disease_name": "Yellow",
+  "organic_fertilizer": "Vermicompost",
+  "bio_pesticide": "Neem Extract",
+  "dosage": "5ml/litre",
+  "crop_rotation": "Pulses",
+  "prevention": "Control aphids early"
+ }
+]
