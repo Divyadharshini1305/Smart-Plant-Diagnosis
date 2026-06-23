@@ -31,7 +31,6 @@ Smart-Plant-Diagnosis/
 ├── maizerecom.py
 ├── paddyrecom.py
 ├── sugarcanerecom.py
-├── paddy_recommendation.json
 │
 ├── models/
 │   ├── MAIZE.h5
