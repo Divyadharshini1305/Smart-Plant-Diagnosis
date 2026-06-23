@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Smart Plant Diagnosis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
+<body>
+
+<div class="main-container">
+
+    <!-- Left Side -->
+    <div class="left-panel">
+        <div class="overlay">
+            <h1>Smart Plant Diagnosis</h1>
+            <p>AI-Powered Precision Agriculture for a Sustainable Future.</p>
+        </div>
+    </div>
+
+    <!-- Right Side -->
+    <div class="right-panel">
+        <div class="login-card">
+
+            <img src="{{ url_for('static', filename='logo.jpeg') }}" class="logo">
+
+            <h2>Welcome Back</h2>
+
+            <form method="POST" action="{{ url_for('login') }}">
+
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Enter your password" required>
+                </div>
+
+                {% if message %}
+                    <p class="error">{{ message }}</p>
+                {% endif %}
+
+                <button type="submit" class="btn-login">Login</button>
+
+                <p class="signup-link">
+                    Don’t have an account?
+                    <a href="{{ url_for('signup') }}">Sign Up</a>
+                </p>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

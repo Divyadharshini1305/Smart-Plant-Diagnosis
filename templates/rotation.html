@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Rotation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='sytle.css') }}">
+</head>
+<body>
+
+<header>
+    <div class="navbar-logo">
+        <img src="{{ url_for('static', filename='logo.jpeg') }}" class="logo">
+        <span>Smart Plant Diagnosis</span>
+    </div>
+
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('detect') }}">Disease Detection</a>
+        <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+    </nav>
+</header>
+
+<section class="rotation-page">
+
+    <div class="rotation-box">
+        <h1>🌱 Crop Rotation Strategy</h1>
+        <p>Optimize soil health and break disease cycles with AI-driven rotation planning.</p>
+
+        <div class="rotation-form">
+            <div>
+                <label>Current Crop</label>
+                <select>
+                    <option>Paddy</option>
+                    <option>Maize</option>
+                    <option>Sugarcane</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Soil Condition</label>
+                <select>
+                    <option>Nitrogen Depleted</option>
+                    <option>Healthy</option>
+                    <option>Pest Prone</option>
+                </select>
+            </div>
+
+            <button>Generate Strategy</button>
+        </div>
+
+        <h2>Recommended Rotation Flow</h2>
+
+        <div class="timeline">
+            <div class="timeline-card">
+                <h3>🌿 Legumes / Pulses</h3>
+                <p>Plant nitrogen-fixing crops like green gram to restore soil nutrients.</p>
+            </div>
+
+            <div class="timeline-card">
+                <h3>🌾 Paddy</h3>
+                <p>Helps suppress soil-borne pathogens and improves soil moisture balance.</p>
+            </div>
+
+            <div class="timeline-card">
+                <h3>☘ Green Manure</h3>
+                <p>Improves organic matter and boosts soil fertility naturally.</p>
+            </div>
+
+            <div class="timeline-card">
+                <h3>🎋 Sugarcane</h3>
+                <p>Return to original crop after restoring soil health.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

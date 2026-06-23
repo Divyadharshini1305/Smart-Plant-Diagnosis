@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Select Crop</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='sytle.css') }}">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #04110a, #071a10, #0c2417);
+    color: white;
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.container h2 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.container p {
+    color: #cfcfcf;
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+}
+
+.crop-container {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+.crop-link {
+    text-decoration: none;
+}
+
+.crop-card {
+    width: 280px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(18px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+    transition: all 0.35s ease;
+}
+
+.crop-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 14px 35px rgba(76,175,80,0.25);
+}
+
+.crop-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.crop-card h3 {
+    padding: 20px;
+    font-size: 1.5rem;
+    color: white;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Select Crop Type</h2>
+    <p>Choose the crop you want to diagnose</p>
+
+    <div class="crop-container">
+
+        <a href="{{ url_for('upload', crop='paddy') }}" class="crop-link">
+            <div class="crop-card">
+                <img src="{{ url_for('static', filename='p_img.jpg') }}">
+                <h3>Paddy</h3>
+            </div>
+        </a>
+
+        <a href="{{ url_for('upload', crop='maize') }}" class="crop-link">
+            <div class="crop-card">
+                <img src="{{ url_for('static', filename='m_img.jpg') }}">
+                <h3>Maize</h3>
+            </div>
+        </a>
+
+        <a href="{{ url_for('upload', crop='sugarcane') }}" class="crop-link">
+            <div class="crop-card">
+                <img src="{{ url_for('static', filename='s_img.jpg') }}">
+                <h3>Sugarcane</h3>
+            </div>
+        </a>
+
+    </div>
+</div>
+
+</body>
+</html>

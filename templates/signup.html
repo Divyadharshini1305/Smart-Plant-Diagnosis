@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Smart Plant Diagnosis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}">
+</head>
+<body>
+
+<div class="main-container">
+
+    <!-- LEFT SIDE -->
+    <div class="left-panel">
+        <div class="overlay">
+            <h1>Join the Revolution</h1>
+            <p>Empowering farmers with AI-driven insights to maximize crop health and yield.</p>
+        </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right-panel">
+        <div class="signup-card">
+
+            <img src="{{ url_for('static', filename='logo.jpeg') }}" class="logo">
+
+            <h2>Create an Account</h2>
+
+            <form method="POST" action="{{ url_for('signup') }}">
+
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" name="fullname" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone" placeholder="Enter your phone number" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Create password" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Location</label>
+                    <input type="text" name="location" placeholder="City, State / Region" required>
+                </div>
+
+                <button type="submit" class="btn-signup">Sign Up</button>
+
+                <p class="login-link">
+                    Already have an account?
+                    <a href="{{ url_for('login') }}">Login</a>
+                </p>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

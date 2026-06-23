@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agri Shop Locator</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='sytle.css') }}">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+</head>
+<body>
+
+<header>
+    <div class="navbar-logo">
+        <img src="{{ url_for('static', filename='logo.jpeg') }}" class="logo">
+        <span>Smart Plant Diagnosis</span>
+    </div>
+
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('detect') }}">Disease Detection</a>
+        <a href="{{ url_for('rotation') }}">Crop Rotation</a>
+        <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+    </nav>
+</header>
+
+<section class="shop-page">
+
+    <div class="shop-header">
+        <h1>Nearby Agri Shops & Fertilizer Stores</h1>
+        <p>Find the closest authorized stores for your recommended treatments.</p>
+    </div>
+
+    <div class="shop-search">
+        <input type="text" id="location-input" placeholder="Enter city (e.g., Chennai, Coimbatore)...">
+        <button onclick="searchLocation()">Search</button>
+        <button onclick="useCurrentLocation()">📍</button>
+    </div>
+
+    <div class="map-box">
+        <div id="map"></div>
+    </div>
+
+</section>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+var map = L.map('map').setView([13.0827, 80.2707], 12);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19
+}).addTo(map);
+
+var shopIcon = L.icon({
+    iconUrl: 'https://cdn-icons-png.flaticon.com/512/1892/1892747.png',
+    iconSize: [32, 32]
+});
+
+var shops = [
+    { name: "Kisan Suvidha Center", lat: 13.0850, lng: 80.2750 },
+    { name: "Green Earth Agri Mart", lat: 13.0780, lng: 80.2600 },
+    { name: "Velanmai Organic Shop", lat: 13.0950, lng: 80.2850 }
+];
+
+shops.forEach(function(shop) {
+    L.marker([shop.lat, shop.lng], {icon: shopIcon})
+        .addTo(map)
+        .bindPopup(shop.name);
+});
+
+var userMarker = L.marker([13.0827, 80.2707]).addTo(map)
+    .bindPopup("Your Location");
+
+function useCurrentLocation() {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        var lat = position.coords.latitude;
+        var lng = position.coords.longitude;
+
+        map.setView([lat, lng], 13);
+        userMarker.setLatLng([lat, lng]).bindPopup("Your Location").openPopup();
+    });
+}
+
+function searchLocation() {
+    let val = document.getElementById("location-input").value;
+
+    if(val.toLowerCase().includes("coimbatore")) {
+        map.setView([11.0168, 76.9558], 12);
+        userMarker.setLatLng([11.0168, 76.9558]).bindPopup("Coimbatore");
+    }
+}
+</script>
+
+</body>
+</html>
